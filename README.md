@@ -20,6 +20,8 @@ $ su # change to ROOT user
 # ./Fedora-Init.sh
 ```
 
+## Reference
+[ArchI0](https://github.com/SifoHamlaoui/ArchI0) : ArchLinux Applications Automatic Installation Script [ PACMAN BASSED DISTROS ]
 
 ## Copyright
 
