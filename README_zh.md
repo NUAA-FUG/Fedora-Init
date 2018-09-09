@@ -1,6 +1,6 @@
 # Fedora Init
 
- :cn: | 中文 :us: |[ English]()
+ :cn: | 中文 :us: |[ English](https://github.com/NUAA-FUG/Fedora-Init/blob/master/README.md)
 
 ## 介绍
 
@@ -20,4 +20,4 @@ $ su # 切换到 ROOT 用户
 
 ## 版权
 
-此项目基于 [GPLv3]() 协议。
+此项目基于 [GPLv3](https://github.com/NUAA-FUG/Fedora-Init/blob/master/LICENSE) 协议。

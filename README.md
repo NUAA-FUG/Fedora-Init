@@ -1,6 +1,6 @@
 # Fedora Init
 
-:us: | English :cn: | [中文]()
+:us: | English :cn: | [中文](https://github.com/NUAA-FUG/Fedora-Init/blob/master/README_zh.md)
 
 ## Introduction
 
@@ -23,4 +23,4 @@ $ su # change to ROOT user
 
 ## Copyright
 
-This project is under [GPLv3]() license.
+This project is under [GPLv3](https://github.com/NUAA-FUG/Fedora-Init/blob/master/LICENSE) license.
