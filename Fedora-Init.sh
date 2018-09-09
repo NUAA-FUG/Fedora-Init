@@ -74,7 +74,7 @@ function updatesystem {
   showlogo
   echo -e "${bu}UPDATE SYSTEM${endc}";
   dnf update -y
-  echo -e "${b}Finished ${enda}";
+  echo -e "${b}${c}Finished ${enda}";
 }
 
 ## add rpm fusion repo
@@ -86,7 +86,7 @@ function AddRpmFusionRepo {
   echo -e "${g}Adding ...${endc}"
   dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
   dnf check-update
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install basic applications
@@ -97,10 +97,13 @@ function installbasicapp {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y vim 
-  dnf install -y curl
+  echo -e "${b}${g}vim has installed${enda}"
+  echo ""
   dnf install -y vlc
+  echo -e "${b}${g}vlc has installed${enda}"
+  echo ""
   dnf install -y ffmpeg
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install NetworkManager plugins
@@ -111,7 +114,7 @@ function installnetman {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y NetworkManager-*
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Some tools to support NTFS and exFAT filesystem
@@ -124,7 +127,7 @@ function installfsupport {
   dnf install -y ntfs-3g
   dnf install -y fuse fuse-libs
   dnf install -y fuse-exfat
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install Visual Studio Code
@@ -138,7 +141,7 @@ function installvscode {
   sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
   dnf check-update
   dnf install -y code
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install Sublime Text 3
@@ -151,7 +154,7 @@ function installsublime {
   rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
   dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
   dnf install -y sublime-text
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install Zeal
@@ -162,7 +165,7 @@ function installzeal {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y zeal
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install OBS
@@ -173,7 +176,7 @@ function installobs {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y obs-studio
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install Anki
@@ -184,7 +187,7 @@ function installanki {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y anki
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install uget
@@ -195,7 +198,7 @@ function installuget {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y uget
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install MkVToolNix
@@ -206,7 +209,7 @@ function installmkvtool {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y mkvtoolnix-gui
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install flash tools
@@ -217,10 +220,14 @@ function installflashtools {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y mediawriter
+  echo -e "${b}${g}Fedora Media Writer has installed${enda}"
+  echo ""
   dnf install -y WoeUSB
+  echo -e "${b}${g}WoeUSB has installed${enda}"
+  echo ""
   wget https://bintray.com/resin-io/redhat/rpm -O /etc/yum.repos.d/bintray-resin-io-redhat.repo
   dnf install -y etcher-electron
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install environment tools
@@ -236,7 +243,7 @@ function installenvtools {
   sleep 1
   dnf install -y gnome-tweak-tool
   dnf install -y chrome-gnome-shell
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install Google Chrome
@@ -250,7 +257,7 @@ function installchrome {
 " > /etc/yum.repos.d/google-chrome.repo'
   dnf check-update
   dnf install -y google-chrome-stable
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## Install Telegram Desktop
@@ -261,7 +268,7 @@ function installtg {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y telegram-desktop
-  echo -e "${b}Finished${enda}";
+  echo -e "${b}${c}Finished${enda}";
 }
 
 ## 
