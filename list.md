@@ -23,3 +23,10 @@
 - [x] Chrome
 - [x] Telegram
 - [x] Calibre
+
+## For Chinese user list
+
+- [x] Shadowsocks
+- [x] Shadowsocks-qt5
+- [x] proxychains-ng
+- [x] genpac
