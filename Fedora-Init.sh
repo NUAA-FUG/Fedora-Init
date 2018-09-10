@@ -271,7 +271,16 @@ function installtg {
   echo -e "${b}${c}Finished${enda}";
 }
 
-## 
+## Install Calibre
+function installcalibre {
+  showlogo
+  echo -e "${bu}Preparing to install Calibre${endc}";
+  echo && echo -en "${y}Press Enter To Continue${endc}";
+  read input
+  echo -e "${g}Installing ... ${endc}";
+  dnf install -y calibre
+  echo -e "${b}${c}Calibre was installed${enda}"
+}
 
 ######
 # Start Initiation
@@ -295,4 +304,5 @@ installflashtools && sleep 1
 installenvtools && sleep 1
 installchrome && sleep 1
 installtg && sleep 1
+installcalibre && sleep 1
 
