@@ -39,6 +39,61 @@ function checkroot {
   fi
 }
 
+## For Chinese user
+function forcn {
+  echo -en "${m}Are you a Chinese?${endc}[Y/N](default Y)";
+  read isChinese
+  if [ $isChinese = "n" -o $isChinese = "N" ]; then
+  echo -e "You choose No"
+  sleep 2
+  else
+  echo -e "${bu}Preparing to install Shadowsocks${endc}";
+  echo && echo -en "${y}Press Enter To Continue${endc}";
+  read input
+  echo -e "${g}Installing ... ${endc}";
+  pip3 install git+https://github.com/shadowsocks/shadowsocks.git@master
+  echo -e "${b}${g}Shadowsocks has installed${enda}";
+  echo -e "${bu}Generate config file for shadowsocks${endc}";
+  mkdir /etc/shadowsocks
+  echo "{
+    \"server\":\"your_server_ip\",
+    \"server_port\":\"your_server_port\",
+    \"local_address\":\"127.0.0.1\",
+    \"local_port\":\"your_local_port\",
+    \"password\":\"your_password\",
+    \"timeout\":500,
+    \"method\":\"your_encrypt_method\",
+    \"fast_open\": true,
+    \"workers\": 1
+    }" > /etc/shadowsocks/config.json
+
+  echo -e "${b}${g}config file has generated${enda}"
+  echo -e "${bu}Preparing to install shadowsocks-qt5 and other plugins relate to Shadowsocks${endc}";
+  echo && echo -en "${y}Press Enter To Continue${endc}";
+  read input
+  echo -e "${g}shadowsocks-qt5 Installing ... ${endc}";
+  dnf copr enable librehat/shadowsocks
+  dnf check-update
+  dnf install shadowsocks-qt5 -y
+  echo -e "${b}${g}ss-qt5 has installed${enda}";
+  echo ""
+  echo -e "${bu}Preparing to install libsodium proxychains and genpac${endc}";
+  echo && echo -en "${y}Press Enter To Continue${endc}";
+  read input
+  echo -e "${g}Installing ... ${endc}";
+  dnf install -y libsodium
+  dnf install -y proxychains-ng
+  pip3 install genpac
+  echo -e "${b}${g}libsodium proxychains and genpac have installed${enda}";
+  echo -e "${bu}Config proxychains and genpac${endc}";
+  sed -i '$d' /etc/proxychains.conf
+  sed -i '$d' /etc/proxychains.conf
+  sed -i '$i socks5 127.0.0.1 1080' /etc/proxychains.conf
+  genpac --format=pac --pac-proxy="SOCKS5 127.0.0.1:1080" -o /etc/pac.txt
+  echo -e "${b}${c}Finished${enda}";
+  fi
+}
+
 ## Requirements Check 
 ### xterm check
 # function checkxterm {
@@ -290,6 +345,7 @@ checkfiglet && sleep 1
 showlogo && echo -e " ${y} Let's start${endc}"
 updatesystem && sleep 1
 AddRpmFusionRepo && sleep 1
+forcn && sleep 2
 installbasicapp && sleep 1
 installnetman && sleep 1
 installfsupport && sleep 1
