@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This project will help us initialize Fedora quickly,the script will install some important basic applications like vim,chrome and so on.If you want to know full list of applications that's been installed,go this [page]().
+This project will help us initialize Fedora quickly,the script will install some important basic applications like vim,chrome and so on.If you want to know full list of applications that's been installed,go this [page](https://github.com/NUAA-FUG/Fedora-Init/blob/master/list.md).
 
 *The script has tested on Fedora 28 workstation*
 

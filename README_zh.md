@@ -4,7 +4,7 @@
 
 ## 介绍
 
-该项目可快速的帮你初始化 Fedora Workstation，安装一些例如 vim Chrome 等重要基础的软件，如果你想了解全部安装软件列表，请前往这个[界面]()。
+该项目可快速的帮你初始化 Fedora Workstation，安装一些例如 vim Chrome 等重要基础的软件，如果你想了解全部安装软件列表，请前往这个[界面](https://github.com/NUAA-FUG/Fedora-Init/blob/master/list.md)。
 
 *此脚本在 Fedora 28 Workstation 上成功测试通过*
 
