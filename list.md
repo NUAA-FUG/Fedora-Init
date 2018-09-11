@@ -12,6 +12,7 @@
 - [x] OBS
 - [x] Anki
 - [x] uget
+- [x] qBittorrent
 - [x] MKVToolNix
 - [x] Fedora Media Writer
 - [x] WoeUSB
