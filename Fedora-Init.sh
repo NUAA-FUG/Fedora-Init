@@ -255,6 +255,16 @@ function installuget {
   dnf install -y uget
   echo -e "${b}${c}Finished${enda}";
 }
+## Install qBittorrent 
+function installqBittorrent {
+  showlogo
+  echo -e "${bu}Preparing to install qBittorrent${endc}"
+  echo && echo -en "${y}Press Enter To Continue${endc}";
+  read input
+  echo -e "${g}Installing ... ${endc}";
+  dnf install -y qbittorrent
+  echo -e "${b}${c}qBittorrent has installed${enda}"
+}
 
 ## Install MkVToolNix
 function installmkvtool {
@@ -354,7 +364,7 @@ installsublime && sleep 1
 installzeal && sleep 1
 installobs && sleep 1
 installanki && sleep 1
-installuget && sleep 1
+installqBittorrent sleep 1 && installuget && sleep 1
 installmkvtool && sleep 1
 installflashtools && sleep 1
 installenvtools && sleep 1
