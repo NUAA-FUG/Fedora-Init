@@ -114,7 +114,7 @@ function forcn {
 function checkfiglet {
   which figlet > /dev/null 2>&1
   if [ "$?" -eq "0" ]; then
-  echo -e "${b}${g}Xterm has installed";
+  echo -e "${b}${g}figlet has installed";
   else
   echo -e "${r}[Warning]: this script need figlet${endc}";
   echo ""
