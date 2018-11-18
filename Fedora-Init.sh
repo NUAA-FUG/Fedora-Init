@@ -147,16 +147,12 @@ function AddRpmFusionRepo {
 ## Install basic applications
 function installbasicapp {
   showlogo
-  echo -e "${bu}Preparing to install vim curl vlc and ffmpeg${endc}";
+  echo -e "${bu}Preparing to install some basic applications like vim,git,ffmpeg,etc.${endc}";
   echo && echo -en "${y}Press Enter To Continue${endc}";
   read input
   echo -e "${g}Installing ... ${endc}";
-  dnf install -y vim 
-  echo -e "${b}${g}vim has installed${enda}"
-  echo ""
+  dnf install -y vim git git-lfs
   dnf install -y vlc
-  echo -e "${b}${g}vlc has installed${enda}"
-  echo ""
   dnf install -y ffmpeg
   echo -e "${b}${c}Finished${enda}";
 }
