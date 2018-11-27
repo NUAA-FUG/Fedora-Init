@@ -8,11 +8,13 @@
 - [x] ntfs-3g fuse fuse-libs fuse-exfat
 - [x] Visual Studio Code
 - [x] Sublime Text 3
+- [x] VirtualBox and Vagrant 
 - [x] Zeal
 - [x] OBS
 - [x] Anki
 - [x] uget
 - [x] qBittorrent
+- [x] amule
 - [x] MKVToolNix
 - [x] Fedora Media Writer
 - [x] WoeUSB
