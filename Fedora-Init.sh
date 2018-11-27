@@ -207,6 +207,20 @@ function installsublime {
   dnf install -y sublime-text
   echo -e "${b}${c}Finished${enda}";
 }
+## Install VirtualBox and Vagrant
+function installVV {
+  showlogo
+  echo -e "${bu}Preparing to install VirtualBox and Vagrant${endc}"
+  echo && echo -en "${y}Press Enter To Continue${endc}"
+  read input
+  echo -e "${g}VirtualBox Installing ... ${endc}"
+  dnf install -y binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
+  dnf install -y VirtualBox 
+  echo -e "${g}Vagrant Installing ... ${endc}"
+  dnf install -y vagrant 
+  echo -e "${r}$(vagrant --version)${endc}"
+  echo -e "${b}${c}Finished${enda}"
+}
 
 ## Install Zeal
 function installzeal {
@@ -259,6 +273,16 @@ function installqBittorrent {
   read input
   echo -e "${g}Installing ... ${endc}";
   dnf install -y qbittorrent
+  echo -e "${b}${c}qBittorrent has installed${enda}"
+}
+## Install amule
+function installamule {
+  showlogo
+  echo -e "${bu}Preparing to install amule${endc}"
+  echo && echo -en "${y}Press Enter To Continue${endc}"
+  read input
+  echo -e "${g}Installing ... ${endc}"
+  dnf install -y amule
   echo -e "${b}${c}qBittorrent has installed${enda}"
 }
 
@@ -357,10 +381,11 @@ installnetman && sleep 1
 installfsupport && sleep 1
 installvscode && sleep 1
 installsublime && sleep 1
+installVV && sleep1
 installzeal && sleep 1
 installobs && sleep 1
 installanki && sleep 1
-installqBittorrent sleep 1 && installuget && sleep 1
+installqBittorrent sleep 1 && installuget && sleep 1 && installamule && sleep 1
 installmkvtool && sleep 1
 installflashtools && sleep 1
 installenvtools && sleep 1
